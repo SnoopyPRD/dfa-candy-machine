@@ -22,8 +22,8 @@ vspd = lengthdir_y(len,dir);
 #region Collision
 
 //Horizontal
-if place_meeting(x+hspd, y, obj_wall){
-	while !place_meeting(x+hspd, y, obj_wall){
+if place_meeting(x+hspd, y, obj_machine){
+	while !place_meeting(x+hspd, y, obj_machine){
 		x+= sign(hspd);
 	}
 	hspd = 0
@@ -32,8 +32,8 @@ if place_meeting(x+hspd, y, obj_wall){
 x += hspd;
 
 //Vertical
-if (place_meeting(x, y+vspd, obj_wall)){
-	while !place_meeting(x, y+vspd, obj_wall){
+if (place_meeting(x, y+vspd, obj_machine)){
+	while !place_meeting(x, y+vspd, obj_machine){
 		x+= sign(vspd);
 	}
 	vspd = 0
@@ -50,10 +50,26 @@ y += vspd
 image_speed = 1;
 
 
-if (len == 0 && lastDirection == "up") sprite_index = player_up_idle;
-else if (len == 0 && lastDirection == "down") sprite_index = player_down_idle;
-else if (len == 0 && lastDirection == "left") sprite_index = player_left_idle;
-else if (len == 0 && lastDirection == "right") sprite_index = player_right_idle;
+if (len == 0 && lastDirection == "up"){
+	sprite_index = player_up_idle;
+	audio_stop_sound(sn_steps);
+}
+else if (len == 0 && lastDirection == "down"){ 
+	sprite_index = player_down_idle;
+	audio_stop_sound(sn_steps);
+}
+else if (len == 0 && lastDirection == "left"){ 
+	sprite_index = player_left_idle;
+	audio_stop_sound(sn_steps);
+}
+else if (len == 0 && lastDirection == "right"){ 
+	sprite_index = player_right_idle;
+	audio_stop_sound(sn_steps);
+} 
+
+if!(audio_is_playing(sn_steps)){
+	audio_play_sound(sn_steps,1001,true);
+}
 
 //Sprite vertical
 if(vspd > 0){

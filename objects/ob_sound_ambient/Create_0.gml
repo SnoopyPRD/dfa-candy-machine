@@ -1,0 +1,1 @@
+audio_play_sound(sn_ambient, 1, true);

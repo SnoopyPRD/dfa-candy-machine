@@ -4,6 +4,8 @@ key_down = keyboard_check(ord("S"));
 key_left = keyboard_check(ord("A"));
 key_right = keyboard_check(ord("D"));
 
+
+
 if(key_up) lastDirection = "up";
 if(key_down) lastDirection = "down";
 if(key_left) lastDirection = "left";
