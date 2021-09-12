@@ -1,9 +1,9 @@
 if(mouse_check_button_pressed(mb_left)){
 	if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)){
-		//Se tiver menos que 10 moedas, adiciona 2 moedas à máquina
+		//Se tiver menos que 10 moedas, adiciona 5 moedas à máquina
 		if(global.coinsOnMachine < 10){
-			global.coins = global.coins - 2;
-			global.coinsOnMachine = global.coinsOnMachine + 2;
+			global.coins = global.coins - 5;
+			global.coinsOnMachine = global.coinsOnMachine + 5;
 		}
 		
 		//Caso o valor da máquina seja igual ou superior a 10, nada muda
