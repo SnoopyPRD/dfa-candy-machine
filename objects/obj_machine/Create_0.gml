@@ -6,5 +6,4 @@ global.candyAEnabled = false;
 global.candyBEnabled = false;
 global.candyCEnabled = false;
 global.troco = 0;
-
-instance_deactivate_layer("Enemy Layer");
+global.coinAdded = "";

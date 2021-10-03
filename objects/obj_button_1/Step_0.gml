@@ -4,12 +4,13 @@ if(mouse_check_button_pressed(mb_left)){
 		//Se tiver menos que 10 moedas, adiciona 1 moeda à máquina
 		if(global.coinsOnMachine < 10){
 			global.coins = global.coins - 1;
+			global.coinAdded = "-1"
+			instance_create_layer(1066, 61, "Instances", obj_coins_added)
 			global.coinsOnMachine = global.coinsOnMachine + 1;
-		}
-		
-		//Caso o valor da máquina seja igual ou superior a 10, nada muda
-		if(global.coinsOnMachine >= 10){
-			global.coinsOnMachine = 10;
+			if(global.coinsOnMachine >= 10){
+				global.coins = global.coins + 10 - global.coinsOnMachine;
+				global.coinsOnMachine = 10;
+			}
 		}
 		
 		//Ativa a compra de doces, caso os valores sejam o suficiente
@@ -22,5 +23,6 @@ if(mouse_check_button_pressed(mb_left)){
 		if(global.coinsOnMachine >= 8){
 			global.candyCEnabled = true;
 		}
+		audio_play_sound(sn_coin_insert, 1, false);
 	}
 }

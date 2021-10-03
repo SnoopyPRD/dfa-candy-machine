@@ -89,8 +89,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "city",
+    "path": "folders/Sprites/city.yy",
   },
   "resourceVersion": "1.0",
   "name": "player_down_walk",

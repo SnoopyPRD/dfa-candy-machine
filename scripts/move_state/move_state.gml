@@ -28,12 +28,36 @@ if place_meeting(x+hspd, y, obj_wall){
 	}
 	hspd = 0
 }
+if place_meeting(x+hspd, y, obj_car_red){
+	while !place_meeting(x+hspd, y, obj_car_red){
+		x+= sign(hspd);
+	}
+	hspd = 0
+}
+if place_meeting(x+hspd, y, obj_car_yellow){
+	while !place_meeting(x+hspd, y, obj_car_yellow){
+		x+= sign(hspd);
+	}
+	hspd = 0
+}
 
 x += hspd;
 
 //Vertical
 if (place_meeting(x, y+vspd, obj_wall)){
 	while !place_meeting(x, y+vspd, obj_wall){
+		x+= sign(vspd);
+	}
+	vspd = 0
+}
+if (place_meeting(x, y+vspd, obj_car_red)){
+	while !place_meeting(x, y+vspd, obj_car_red){
+		x+= sign(vspd);
+	}
+	vspd = 0
+}
+if (place_meeting(x, y+vspd, obj_car_yellow)){
+	while !place_meeting(x, y+vspd, obj_car_yellow){
 		x+= sign(vspd);
 	}
 	vspd = 0
@@ -49,7 +73,9 @@ y += vspd
 
 image_speed = 1;
 
-
+if!(audio_is_playing(sn_steps)){
+	audio_play_sound(sn_steps,1,true);
+}
 if (len == 0 && lastDirection == "up"){
 	sprite_index = player_up_idle;
 	audio_stop_sound(sn_steps);
@@ -67,9 +93,7 @@ else if (len == 0 && lastDirection == "right"){
 	audio_stop_sound(sn_steps);
 } 
 
-if!(audio_is_playing(sn_steps)){
-	audio_play_sound(sn_steps,1001,true);
-}
+
 
 //Sprite vertical
 if(vspd > 0){

@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "city",
+    "path": "folders/Objects/city.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_car_yellow",

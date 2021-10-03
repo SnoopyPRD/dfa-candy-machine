@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_button_2",
-    "path": "sprites/spr_button_2/spr_button_2.yy",
+    "name": "spr_button_5",
+    "path": "sprites/spr_button_5/spr_button_5.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "city",
+    "path": "folders/Objects/city.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_button_5",
